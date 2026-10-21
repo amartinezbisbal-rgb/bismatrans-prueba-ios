@@ -108,16 +108,18 @@ hr{border-top-color:#e5edf8}
 /* Ajustes finales de identidad y navegación */
 header{background:linear-gradient(125deg,#168ffb,#0961e8);color:#fff;border-radius:0 0 22px 22px;box-shadow:0 8px 20px #1465dc24}
 header h1{color:#fff;font-family:"Sergy Trendi","SergyTrendi","Trebuchet MS",ui-rounded,system-ui,sans-serif;font-size:clamp(22px,6vw,32px);letter-spacing:-.7px;display:flex;align-items:center;gap:11px;white-space:nowrap}
-.brand-truck{font-family:system-ui;font-size:1.3em;line-height:1}
+.brand-truck{display:inline-flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0}.brand-truck svg{display:block;width:39px;height:31px}
 .tabs svg{width:25px;height:25px;display:block;margin:0 auto 4px;filter:drop-shadow(0 2px 2px #1777d51c)}
 .tabs button{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0;min-height:54px}
 .tabs button.active{background:#e8f3ff}
 @media(max-width:370px){header h1{font-size:21px}.tabs svg{width:23px;height:23px}}
+
+.section-icon{width:27px;height:27px;vertical-align:-6px;display:inline-block;margin-right:5px;flex-shrink:0}
 </style>
 </head>
 <body>
 <header>
-  <h1><span class="brand-truck" aria-hidden="true">🚛</span> Bismatrans,S.L</h1>
+  <h1><span class="brand-truck" aria-hidden="true"><svg width="39" height="31" viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="27" height="19" rx="3" fill="#ffffff"/><path d="M29 13h9l7 8v5H29V13Z" fill="#ffffff"/><path d="M34 16h3l4 5h-7v-5Z" fill="#1688F6"/><circle cx="12" cy="27" r="5" fill="#0C4EAD" stroke="white" stroke-width="2"/><circle cx="37" cy="27" r="5" fill="#0C4EAD" stroke="white" stroke-width="2"/><path d="M7 13h17M7 18h12" stroke="#1688F6" stroke-width="2" stroke-linecap="round"/></svg></span> Bismatrans,S.L</h1>
 </header>
 
 <main>
@@ -154,12 +156,12 @@ header h1{color:#fff;font-family:"Sergy Trendi","SergyTrendi","Trebuchet MS",ui-
 </section>
 
 <section id="trabajos" class="page">
-<div class="card"><h2>🚛 Iniciar viaje</h2><p class="note">Registra la carga ahora. Completarás la descarga más tarde.</p><div class="grid">
+<div class="card"><h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="#2384ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="12" height="11" rx="2"/><path d="M14 9h4l4 4v4h-8"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg> Iniciar viaje</h2><p class="note">Registra la carga ahora. Completarás la descarga más tarde.</p><div class="grid">
 <div><label>Fecha de carga</label><input type="date" id="jobDate"></div><div><label>Cliente</label><input id="jobClient" placeholder="Cliente"></div>
 <div><label>Lugar de carga</label><input id="jobLoad" list="places" placeholder="Origen"></div><div><label>Destino previsto (opcional)</label><input id="jobUnload" list="places" placeholder="Destino"></div>
 <div><label>Km en carga</label><input id="jobKmStart" type="number" min="0" step="1" inputmode="numeric"></div><div><label>Kilos en carga</label><input id="jobWeightStart" type="number" min="0" step="0.01" inputmode="decimal"></div>
 </div><label>Observaciones</label><textarea id="jobNotes" placeholder="Mercancía, referencia..."></textarea><button class="primary" onclick="addJob()">Iniciar viaje</button></div>
-<div class="card"><h2>🏁 Finalizar viaje</h2><label>Selecciona un viaje en curso</label><select id="finishJob" onchange="showFinishJob()"></select><p id="finishInfo" class="note"></p><div class="grid">
+<div class="card"><h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="#2384ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4m0 1c5-4 9 4 15 0v11c-6 4-10-4-15 0"/></svg> Finalizar viaje</h2><label>Selecciona un viaje en curso</label><select id="finishJob" onchange="showFinishJob()"></select><p id="finishInfo" class="note"></p><div class="grid">
 <div><label>Fecha de descarga</label><input id="finishDate" type="date"></div><div><label>Lugar de descarga</label><input id="finishUnload" list="places"></div>
 <div><label>Km en descarga</label><input id="finishKm" type="number" min="0" step="1" inputmode="numeric"></div><div><label>Kilos en descarga</label><input id="finishWeight" type="number" min="0" step="0.01" inputmode="decimal"></div>
 </div><button class="primary" onclick="finishTrip()">Finalizar viaje</button></div>
@@ -167,7 +169,7 @@ header h1{color:#fff;font-family:"Sergy Trendi","SergyTrendi","Trebuchet MS",ui-
 </section>
 <section id="repostajes" class="page">
   <div class="card">
-    <h2>⛽ Nuevo repostaje</h2>
+    <h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="#17a876" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M3 21h14M7 7h6v5H7zM16 9l3 3v6a2 2 0 0 0 4 0v-7l-3-3"/></svg> Nuevo repostaje</h2>
     <p class="note"><b>Versión consumos Gasoil + AdBlue</b></p>
     <div class="grid">
       <div><label>Tipo de repostaje</label><select id="fuelType"><option value="Gasoil">⛽ Gasoil</option><option value="AdBlue">💧 AdBlue</option></select></div>
@@ -190,7 +192,7 @@ header h1{color:#fff;font-family:"Sergy Trendi","SergyTrendi","Trebuchet MS",ui-
 
 <section id="gastos" class="page">
   <div class="card">
-    <h2>💳 Nuevo gasto</h2>
+    <h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="#f5a03a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20M6 15h4"/></svg> Nuevo gasto</h2>
     <div class="grid">
       <div><label>Fecha</label><input type="date" id="expDate"></div>
       <div><label>Tipo</label>
@@ -214,7 +216,7 @@ header h1{color:#fff;font-family:"Sergy Trendi","SergyTrendi","Trebuchet MS",ui-
 
 <section id="datos" class="page">
   <div class="card">
-    <h2>📁 Copia de seguridad</h2>
+    <h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="#536d95" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v2M3 10h18l-2 11H5z"/></svg> Copia de seguridad</h2>
     <p class="note">Los datos se guardan en este dispositivo. Exporta una copia periódicamente.</p>
     <div class="toolbar">
       <button class="primary" onclick="exportJSON()">Exportar copia</button>
@@ -231,10 +233,10 @@ header h1{color:#fff;font-family:"Sergy Trendi","SergyTrendi","Trebuchet MS",ui-
   </div>
 </section>
 
-<section id="archivo" class="page"><div class="card"><h2>🧾 Factura única del mes</h2><p class="note">Registra la base sin IVA para calcular el precio por km. Adjunta aquí tu factura existente (PDF o foto). Los cobros se registran por separado.</p><div class="grid"><div><label>Mes de los trabajos</label><input id="invoiceMonth" type="month"></div><div><label>Número de factura</label><input id="invoiceNumber" placeholder="Ej. F-09/2026"></div><div><label>Fecha de factura</label><input id="invoiceDate" type="date"></div><div><label>Base imponible (€), sin IVA</label><input id="invoiceBase" type="number" min="0" step="0.01" inputmode="decimal"></div><div><label>IVA (€), si corresponde</label><input id="invoiceVat" type="number" min="0" step="0.01" inputmode="decimal"></div><div><label>Total factura (€)</label><input id="invoiceTotal" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Se calcula si se deja vacío"></div><div><label>Fecha de cobro (opcional)</label><input id="invoicePaidDate" type="date"></div><div><label>Importe cobrado (€)</label><input id="invoicePaid" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0 si está pendiente"></div></div><label>Adjuntar factura existente (PDF o foto)</label><input id="invoiceFile" type="file" accept="application/pdf,image/*"><div class="toolbar"><button class="primary" onclick="saveInvoice()">Guardar factura mensual</button></div><p id="invoiceInfo" class="note"></p><div id="invoiceHistory"></div></div><div class="card"><h2>📎 Fotografías y documentos</h2><p class="note">Selecciona un trabajo, repostaje o gasto ya guardado. Puedes adjuntar fotos, albaranes, facturas existentes y PDF.</p><label>Registro</label><select id="docRecord"></select><label>Clase de documento</label><select id="docType"><option>Foto del trabajo</option><option>Albarán</option><option>Factura</option><option>Ticket</option><option>Otro</option></select><label>Fotos o archivos (puedes seleccionar varios)</label><input type="file" id="docFiles" accept="image/*,application/pdf" multiple>
-<label>Escanear documento con cámara / fotos</label><input type="file" id="scanFiles" accept="image/*" capture="environment" multiple>
-<div class="toolbar"><button class="primary" onclick="addDocuments()">Adjuntar documentos</button><button class="secondary" onclick="scanToPDF()">✂️ Recortar y guardar como PDF</button></div>
-<p class="note">Puedes usar una o varias imágenes. Bismatrans las unirá en un único PDF.</p><p class="note" id="docStatus"></p><h3>Documentos guardados</h3><div id="docList"></div></div><div class="card" style="display:none"><h2>💶 Cobros y pagos</h2><label>Trabajo relacionado</label><select id="paymentJob"></select><div class="grid"><div><label>Fecha de cobro</label><input type="date" id="paymentDate"></div><div><label>Importe cobrado (€)</label><input type="number" step="0.01" id="paymentAmount"></div></div><label>Referencia / observaciones</label><input id="paymentNote"><div class="toolbar"><button class="primary" onclick="addPayment()">Guardar cobro</button></div><div id="paymentList"></div></div><div class="card"><h2>🖨️ Cierre mensual</h2><label>Mes a imprimir</label><input type="month" id="reportMonth"><p class="note">Genera un único PDF con el resumen mensual y, al final, los PDF adjuntos vinculados a los registros del mes. Las fotografías también se incluyen como anexos.</p><button class="primary" onclick="printMonthly()">Abrir informe mensual</button></div></section>
+<section id="archivo" class="page"><div class="card"><h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="#8955ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h14v18l-3-2-4 2-4-2-3 2zM9 8h6M9 12h6M9 16h4"/></svg> Factura única del mes</h2><p class="note">Registra la base sin IVA para calcular el precio por km. Adjunta aquí tu factura existente (PDF o foto). Los cobros se registran por separado.</p><div class="grid"><div><label>Mes de los trabajos</label><input id="invoiceMonth" type="month"></div><div><label>Número de factura</label><input id="invoiceNumber" placeholder="Ej. F-09/2026"></div><div><label>Fecha de factura</label><input id="invoiceDate" type="date"></div><div><label>Base imponible (€), sin IVA</label><input id="invoiceBase" type="number" min="0" step="0.01" inputmode="decimal"></div><div><label>IVA (€), si corresponde</label><input id="invoiceVat" type="number" min="0" step="0.01" inputmode="decimal"></div><div><label>Total factura (€)</label><input id="invoiceTotal" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Se calcula si se deja vacío"></div><div><label>Fecha de cobro (opcional)</label><input id="invoicePaidDate" type="date"></div><div><label>Importe cobrado (€)</label><input id="invoicePaid" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0 si está pendiente"></div></div><label>Adjuntar factura existente (PDF o foto)</label><input id="invoiceFile" type="file" accept="application/pdf,image/*"><div class="toolbar"><button class="primary" onclick="saveInvoice()">Guardar factura mensual</button></div><p id="invoiceInfo" class="note"></p><div id="invoiceHistory"></div></div><div class="card"><h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="#8955ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 11-9.5 9.5a6 6 0 0 1-8.5-8.5L13 2a4 4 0 0 1 5.7 5.7l-10 10a2 2 0 0 1-2.8-2.8L15 6"/></svg> Fotografías y documentos</h2><p class="note">Selecciona un trabajo, repostaje o gasto ya guardado. Puedes adjuntar fotos, albaranes, facturas existentes y PDF.</p><label>Registro</label><select id="docRecord"></select><label>Clase de documento</label><select id="docType"><option>Foto del trabajo</option><option>Albarán</option><option>Factura</option><option>Ticket</option><option>Otro</option></select><label>Fotos o archivos (puedes seleccionar varios)</label><input type="file" id="docFiles" accept="image/*,application/pdf" multiple>
+<label>Escanear documento (recorte automático tras la foto)</label><input type="file" id="scanFiles" accept="image/*" capture="environment" multiple onchange="scanToPDF()">
+<div class="toolbar"><button class="primary" onclick="addDocuments()">Adjuntar documentos</button><button class="secondary" onclick="scanToPDF()">✂️ Hacer foto y recortar</button></div>
+<p class="note">Puedes usar una o varias imágenes. Bismatrans las unirá en un único PDF.</p><p class="note" id="docStatus"></p><h3>Documentos guardados</h3><div id="docList"></div></div><div class="card" style="display:none"><h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="#8955ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="M15 5a6 6 0 1 1-6 10M9 6v6m-2-4h4"/></svg> Cobros y pagos</h2><label>Trabajo relacionado</label><select id="paymentJob"></select><div class="grid"><div><label>Fecha de cobro</label><input type="date" id="paymentDate"></div><div><label>Importe cobrado (€)</label><input type="number" step="0.01" id="paymentAmount"></div></div><label>Referencia / observaciones</label><input id="paymentNote"><div class="toolbar"><button class="primary" onclick="addPayment()">Guardar cobro</button></div><div id="paymentList"></div></div><div class="card"><h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="#8955ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z"/></svg> Cierre mensual</h2><label>Mes a imprimir</label><input type="month" id="reportMonth"><p class="note">Genera un único PDF con el resumen mensual y, al final, los PDF adjuntos vinculados a los registros del mes. Las fotografías también se incluyen como anexos.</p><button class="primary" onclick="printMonthly()">Abrir informe mensual</button></div></section>
 <datalist id="places"></datalist>
 <datalist id="fuelPlaces"></datalist>
 </main>
@@ -467,10 +469,13 @@ function closeCropModal(){cropModal.classList.remove('open');cropModal.setAttrib
 async function jpegPage(f){const u=await fileAsDataURL(f),im=await new Promise((ok,no)=>{const x=new Image();x.onload=()=>ok(x);x.onerror=no;x.src=u}),s=Math.min(1,1800/Math.max(im.naturalWidth,im.naturalHeight)),c=document.createElement('canvas');c.width=Math.round(im.naturalWidth*s);c.height=Math.round(im.naturalHeight*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);return{u:c.toDataURL('image/jpeg',.82),w:c.width,h:c.height}}
 function imagePDF(pg){const E=new TextEncoder(),C=[];let L=0,O=[0],objs=[()=>`<< /Type /Catalog /Pages 2 0 R >>`,null],kids=[];const P=x=>{x=typeof x==='string'?E.encode(x):x;C.push(x);L+=x.length};for(const p of pg){let ib=dataBytes(p.u),ino=objs.length+1;objs.push(()=>({h:`<< /Type /XObject /Subtype /Image /Width ${p.w} /Height ${p.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${ib.length} >>\nstream\n`,b:ib,t:'\nendstream'}));let pw=595.28,ph=841.89,r=Math.min(pw/p.w,ph/p.h),w=p.w*r,h=p.h*r,x=(pw-w)/2,y=(ph-h)/2,ct=`q\n${w} 0 0 ${h} ${x} ${y} cm\n/Im${ino} Do\nQ\n`,cno=objs.length+1;objs.push(()=>`<< /Length ${E.encode(ct).length} >>\nstream\n${ct}endstream`);let pno=objs.length+1;objs.push(()=>`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pw} ${ph}] /Resources << /XObject << /Im${ino} ${ino} 0 R >> >> /Contents ${cno} 0 R >>`);kids.push(pno)}objs[1]=()=>`<< /Type /Pages /Kids [${kids.map(x=>x+' 0 R').join(' ')}] /Count ${kids.length} >>`;P('%PDF-1.4\n');for(let i=0;i<objs.length;i++){O[i+1]=L;P(`${i+1} 0 obj\n`);let v=objs[i]();if(typeof v==='string')P(v);else{P(v.h);P(v.b);P(v.t)}P('\nendobj\n')}let xr=L;P(`xref\n0 ${objs.length+1}\n0000000000 65535 f \n`);for(let i=1;i<=objs.length;i++)P(String(O[i]).padStart(10,'0')+' 00000 n \n');P(`trailer\n<< /Size ${objs.length+1} /Root 1 0 R >>\nstartxref\n${xr}\n%%EOF`);return new Blob(C,{type:'application/pdf'})}
 function blobURL(b){return new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=no;r.readAsDataURL(b)})}
+let scanBusy=false;
 async function scanToPDF(){
+  if(scanBusy)return;
   const fs=[...scanFiles.files];
   if(!docRecord.value)return alert('Selecciona primero un registro.');
   if(!fs.length){scanFiles.click();return}
+  scanBusy=true;
   docStatus.textContent='Preparando recorte...';
   try{
     const pg=[];
@@ -489,7 +494,7 @@ async function scanToPDF(){
   }catch(e){
     closeCropModal();
     docStatus.textContent=e.message==='Escaneo cancelado'?'Escaneo cancelado.':'Error al crear PDF: '+e.message;
-  }
+  } finally { scanBusy=false; }
 }
 
 async function addDocuments(){const files=[...docFiles.files];if(!docRecord.value||!files.length)return alert('Selecciona un registro y uno o más archivos.');docStatus.textContent='Guardando archivos...';try{for(const f of files){if(f.size>15*1024*1024)throw Error('El archivo '+f.name+' supera 15 MB.');await putDoc({id:id(),recordId:docRecord.value,type:docType.value,name:f.name,mime:f.type||'application/octet-stream',data:await fileAsDataURL(f),date:today()})}docFiles.value='';docStatus.textContent='Documentos guardados en este dispositivo.';await renderArchive()}catch(e){docStatus.textContent='Error: '+e.message+' Comprueba el espacio libre.'}}
